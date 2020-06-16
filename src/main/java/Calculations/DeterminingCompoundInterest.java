@@ -31,7 +31,7 @@ public class DeterminingCompoundInterest {
 
         doMath();
 
-        System.out.println("$" + getP() + " invested at " + getR() + "% for " + getT() + "compounded " + getN() + " times per year is \n" +
+        System.out.println(NumberFormat.getCurrencyInstance(new Locale("en", "US")).format(getP())  + " invested at " + getR() + "% for " + getT() + " compounded " + getN() + " times per year is \n" +
                 NumberFormat.getCurrencyInstance(new Locale("en", "US")).format(getA()));
     }
 
