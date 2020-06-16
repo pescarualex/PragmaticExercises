@@ -27,7 +27,7 @@ public class SelfCeckout {
     // Te rog sa nu ma injuri :))
     // Nu am prea avut inspiratie la numele variabilelor
     // Acum am inteles cat de important este ca numele variabilelor
-    //sa fie cat mai concise.
+    //sa fie cat mai concis.
 
 
 

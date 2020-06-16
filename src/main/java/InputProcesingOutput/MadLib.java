@@ -15,6 +15,6 @@ public class MadLib {
         System.out.println("Enter an adverb: ");
         String adverb = scanner.nextLine();
 
-        System.out.println("If you are a " + noun + " and your mind is " + adjective + ", it's funny because the " + verb + " are the expensive tool for " + adverb);
+        System.out.println("If you are a " + noun + " and your mind is " + adjective + ", it's funny because the " + verb + " are the expensive tool for " + adverb + ".");
     }
 }

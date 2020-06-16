@@ -24,7 +24,7 @@ public class RetirementCalculation {
         int dateToRetire = currentYear + yearLeftToRetire;
 
         System.out.println("You have " + yearLeftToRetire + " year left until you can retire.\n" +
-                          "It's " + currentYear + ", so you can retine in " + dateToRetire);
+                          "It's " + currentYear + ", so you can retire in " + dateToRetire);
 
     }
 }
