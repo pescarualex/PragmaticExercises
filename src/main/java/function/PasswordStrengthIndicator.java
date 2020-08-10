@@ -14,7 +14,7 @@ public class PasswordStrengthIndicator {
             System.out.println("The password '" + password + "' is a strong password.");
         } else if (password.matches("^(?=.*[a-z])")) {
             if (password.matches("(?=.*[0-9])")) {
-                if (password.matches("(?=.*[!@#\\$%\\^&\\*])(?=.{8,})")) {
+                if (password.matches("(?=.*[!@#\\$%\\^&\\*])")) {
                     System.out.println("The password '" + password + "' is a very strong password.");
                 }
 
@@ -28,8 +28,6 @@ public class PasswordStrengthIndicator {
 
         System.out.println("Enter the password: ");
         String password = sc.next();
-
-
 
         pass.passwordValidator(password);
 
