@@ -8,11 +8,11 @@ public class PasswordStrengthIndicator {
 
         if (password.matches("(?=.*[0-9]).*")) {
             System.out.println("The password '" + password + "' is a very week password.");
-        } else if (password.matches("(?=.*[a-z]+).*")) {
+        } else if (password.matches("(?=.*[a-z]).*")) {
             System.out.println("The password '" + password + "' is a week password.");
-        } else if (password.matches("(?=.*[0-9]).*") && password.matches(("(?=.*[a-z]).*"))) {
+        } else if (password.matches("(?=.*[0-9]).*(?=.*[a-z]).*")){
             System.out.println("The password '" + password + "' is a strong password.");
-        } else if (password.matches("^(?=.*[a-z]).*(?=.*[0-9]).*(?=.*[!@#\\$%\\^&\\*]).*")) {
+        } else if (password.matches("^(?=.*[a-z]).*(?=.*[0-9]).*(?=.*[~!@#$%^&*()_-]).*")) {
             System.out.println("The password '" + password + "' is a very strong password.");
         }
     }
