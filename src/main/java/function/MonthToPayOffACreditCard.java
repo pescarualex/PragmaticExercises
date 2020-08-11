@@ -5,16 +5,17 @@ import java.lang.Math;
 
 public class MonthToPayOffACreditCard {
 
-    private double calculateMonthUntilPayOff(double b, double apr, double p) {
-        double n = 0;
-        double aprDivided = (apr / 100) / 350;
-        double i = aprDivided;
+    private void calculateMonthUntilPayOff(double b, double apr, double p) {
+        double n;
+        apr = (apr / 100) / 365;
+        double i = Math.round(apr) * 100 / 100.0;
 
-
+        double x = Math.round(Math.log((1 + (b / p))) * 100) / 100.0;
+        double y = Math.round(Math.log(1 + i) * 100) / 100.0;
+        double z = Math.round(Math.pow(1 + i, 30) * 100) / 100.0;
+        n = Math.round((( -1 / 30 * x * (1 - z) / y)) * 100) / 100.0;
 
         System.out.println("It will take you " + n + " months to pay off this card.");
-
-        return n;
     }
 
     public static void main(String[] args) {
