@@ -7,13 +7,13 @@ public class MonthToPayOffACreditCard {
 
     private void calculateMonthUntilPayOff(double b, double apr, double p) {
         double n;
-        apr = (apr / 100) / 365;
-        double i = Math.round(apr) * 100 / 100.0;
+        double i = apr / 100 / 365;
 
-        double x = Math.round(Math.log((1 + (b / p))) * 100) / 100.0;
-        double y = Math.round(Math.log(1 + i) * 100) / 100.0;
-        double z = Math.round(Math.pow(1 + i, 30) * 100) / 100.0;
-        n = Math.round((( -1 / 30 * x * (1 - z) / y)) * 100) / 100.0;
+        double x = -1 / 30.0;
+        double y = Math.log(1 + b / p * (1 - (Math.pow(1 + i, 30))));
+        double z = Math.log(1 + i);
+
+        n = Math.ceil( x * y / z);
 
         System.out.println("It will take you " + n + " months to pay off this card.");
     }
