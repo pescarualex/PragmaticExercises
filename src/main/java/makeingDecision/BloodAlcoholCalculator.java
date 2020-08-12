@@ -5,13 +5,14 @@ import java.util.Scanner;
 
 public class BloodAlcoholCalculator {
 
-    int A;
+    double A;
     double W;
     String gender;
     int numberOfDrinks;
     double r;
     int H;
     double BAC;
+    double weightInPounds;
 
     Scanner sc = new Scanner(System.in);
 
@@ -22,12 +23,12 @@ public class BloodAlcoholCalculator {
 
     public void calculate() {
         convertTheValue();
-        BAC = Math.round(((A * 5.14 / W * r) - 0.015 * H) * 100) / 100.0;
+        BAC = Math.round(((A * 5.14 / weightInPounds * r) - 0.015 * H) * 100) / 100.0;
     }
 
     public void convertTheValue() {
-        double A = Math.round(((numberOfDrinks * (5.5 / 100)) * 33.8140) * 100) / 100.0;
-        double weightInPounds = Math.round((W * 2.2046) * 100) / 100.0;
+        A = Math.round(((numberOfDrinks * (5.5 / 100)) * 33.8140) * 100) / 100.0;
+        weightInPounds = Math.round((W * 2.2046) * 100) / 100.0;
     }
 
     private void getWeight() {
