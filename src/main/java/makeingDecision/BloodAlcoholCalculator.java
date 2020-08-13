@@ -16,10 +16,6 @@ public class BloodAlcoholCalculator {
 
     Scanner sc = new Scanner(System.in);
 
-    // nu reusesc sa imi dau seama de ce rezultatul e cu - in fata..
-    // te rog sa-mi dai un feedback pentru asta
-    // nu imi mai maanc nervii cu exercitiul asta.. si asa,
-    // nu functioneaza cum trebe..14-18
 
     public void calculate() {
         convertTheValue();
