@@ -1,90 +1,88 @@
 package programingByDoing.project;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Scanner;
 
 public class Calculator {
 
-    static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-    static String a;
+    static String operator;
+    static int num1;
+    static int num2;
     static boolean stop = true;
 
     public static void main(String[] args) throws IOException {
 
+        Scanner sc = new Scanner(System.in);
+        
         while (stop) {
+
             System.out.print(">");
-            a = br.readLine();
-            String[] str = a. trim().split("\\s+[+]\\s+");
-            String[] split = a.trim().split("^[0-9][\\s+][\\s+][0-9]*$");
+            num1 = sc.nextInt();
+            operator = sc.next();
+            num2 = sc.nextInt();
 
-            List<Integer> nums = new ArrayList<>();
-
-            for (int i = 0; i < str.length; i++) {
-                nums.add(Integer.parseInt(str[i]));
-                for (int j = 0; j < split.length; j++) {
-                    if (split[j].equalsIgnoreCase("+")) {
-                        addition(nums.get(i));
-                    }
-                }
+            if (operator.equalsIgnoreCase("+")) {
+                addition(num1, num2);
+            } else if (operator.equalsIgnoreCase("-")) {
+                substraction(num1, num2);
+            } else if (operator.equalsIgnoreCase("*")) {
+                multiplication(num1, num2);
+            } else if (operator.equalsIgnoreCase("/")) {
+                division(num1, num2);
+            } else {
+                System.out.println("You entered a non valid operator. Try again: ");
+                main(args);
             }
-
-
         }
     }
 
 
-    public static void addition(int nums) {
+    public static void addition(int num1, int num2) {
 
-        if (nums == 0) {
+        if (num1 == 0 || num2 == 0) {
             System.out.println("Goodbay!");
             stop = false;
+            System.exit(0);
         }
 
-        nums += nums;
-        System.out.println(nums);
+        int total = num1 + num2;
+        System.out.println(total);
     }
 
 
-
-    public static int substraction(int a, int b) {
-        System.out.print("> ");
+    public static void substraction(int a, int b) {
 
         if (a == 0 || b == 0) {
             System.out.println("Goodbay!");
             stop = false;
+            System.exit(0);
         }
 
         int total = a - b;
         System.out.println(total);
-        return total;
     }
 
-    public static int multiplication(int a, int b) {
-        System.out.print("> ");
+    public static void multiplication(int a, int b) {
 
         if (a == 0 || b == 0) {
             System.out.println("Goodbay!");
             stop = false;
+            System.exit(0);
         }
 
         int total = a * b;
         System.out.println(total);
-        return total;
     }
 
-    public static double division(double a, double b) {
-        System.out.print("> ");
+    public static void division(double a, double b) {
 
         if (a == 0 || b == 0) {
             System.out.println("Goodbay!");
             stop = false;
+            System.exit(0);
         }
 
         double total = a / b;
         System.out.println(total);
-        return total;
     }
 }
