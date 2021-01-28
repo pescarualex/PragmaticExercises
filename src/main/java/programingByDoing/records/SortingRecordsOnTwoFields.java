@@ -16,9 +16,6 @@ public class SortingRecordsOnTwoFields {
         File file = new File("src/main/java/programingByDoing/records/gb.txt");
         Scanner scanner = new Scanner(file);
 
-        StudentGrade temp;
-        StudentGrade tmp;
-
         StudentGrade[] studentGrades = new StudentGrade[30];
 
         int count = 0;
@@ -34,6 +31,7 @@ public class SortingRecordsOnTwoFields {
         for (int i = 0; i < studentGrades.length; i++) {
             for (int j = 0; j < studentGrades.length; j++) {
                 if (studentGrades[i].studentId < studentGrades[j].studentId) {
+                    StudentGrade temp;
                     temp = studentGrades[i];
                     studentGrades[i] = studentGrades[j];
                     studentGrades[j] = temp;
@@ -45,6 +43,7 @@ public class SortingRecordsOnTwoFields {
             for (int i = 0; i < studentGrades.length; i++) {
                 if (studentGrades[j].studentId == studentGrades[i].studentId &&
                         studentGrades[j].gradeNumber < studentGrades[i].gradeNumber) {
+                    StudentGrade tmp;
                     tmp = studentGrades[j];
                     studentGrades[j] = studentGrades[i];
                     studentGrades[i] = tmp;
