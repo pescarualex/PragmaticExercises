@@ -6,24 +6,42 @@ import java.util.List;
 
 public class TwoSum {
     public static void main(String[] args) throws ParseException {
-        KangarooJumps.kangaroo(0, 2, 5, 3);
+
+//        List<Integer> a = new ArrayList<>();
+//        List<Integer> b = new ArrayList<>();
+//
+//        a.add(2);
+//        a.add(4);
+//
+//        b.adddd(16);
+//        b.add(32);
+//        b.add(96);
+//
+//        BetweenTwoSets.getTotalX(a, b);
+
 
     }
 }
 
 
+//class BetweenTwoSets {
+//    static int getTotalX(List<Integer> a, List<Integer> b) {
+//        // Write your code here
+//
+//
+//
+//    }
+//}
+
+
 class KangarooJumps {
-    public static String kangaroo(int x1, int v1, int x2, int v2) {
-        for(int i = x1; i < 13; i += v1){
-            for(int j = x2; j < 13; j += v2){
-                if(i == j){
-                    return "YES";
-                } else {
-                    return "NO";
-                }
+    static String kangaroo(int x1, int v1, int x2, int v2) {
+        for(int i = 0; i < 100000; i++){
+            if(x1 + i * v1 == x2 + i * v2){
+                return "YES";
             }
         }
-        return "";
+        return "NO";
     }
 }
 
