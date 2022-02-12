@@ -7,14 +7,6 @@ import java.util.Scanner;
 
 public class PasswordGenerator {
 
-
-
-    /* E singurul algoritm pe care l-am gandit si stiut implementa. Nu e ca si in
-     cerinta exercitiului, dar nu gasesc sa intercalez valorile si nu imi iese
-     nici sa pun diferenta de litere.
-    */
-
-
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Random rand = new Random();
@@ -61,15 +53,15 @@ public class PasswordGenerator {
         for (int i = 0; i < charCountainLenght; i++) {
             special = character.charAt(rand.nextInt(characters.size()));
             System.out.print(special);
-        }
-        for (int i = 0; i < numberLenght; i++) {
+
             num = digit.charAt(rand.nextInt(numbers.size()));
             System.out.print(num);
-        }
-        for (char i = 0; i < minimumLenght; i++) {
+
             let = letter.charAt(rand.nextInt(letters.size()));
             System.out.print(let);
         }
+
+
 
 
     }
